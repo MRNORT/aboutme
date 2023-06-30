@@ -1,174 +1,89 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Include Font Awesome CSS -->
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #2E3440;
+            color: #ECEFF4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
 
-    /* Add custom font */
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+        .container {
+            text-align: center;
+            max-width: 500px;
+            opacity: 0;
+            animation: fade-in 1s forwards;
+            padding: 40px;
+            background: linear-gradient(135deg, #8FBCBB, #5E81AC, #81A1C1, #5E81AC);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
 
-    /* Set up the Nord color palette */
-    :root {
-      --nord0: #2e3440;
-      --nord1: #3b4252;
-      --nord2: #434c5e;
-      --nord3: #4c566a;
-      --nord4: #d8dee9;
-      --nord5: #e5e9f0;
-      --nord6: #eceff4;
-      --nord7: #D8DEE9;
-      --nord8: #88c0d0;
-      --nord9: #81a1c1;
-      --nord10: #5e81ac;
-      --nord11: #bf616a;
-      --nord12: #d08770;
-      --nord13: #ebcb8b;
-      --nord14: #a3be8c;
-      --nord15: #b48ead;
-    }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    /* Body styles */
-    body {
-      font-family: 'Open Sans', Arial, sans-serif;
-      background-color: var(--nord1);
-      color: var(--nord4);
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden; /* Disable scrolling */
-    }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
 
-    html {
-      overflow: hidden; /* Disable scrolling */
-    }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
 
-    /* Container styles */
-    .container {
-      max-width: 600px;
-      padding: 40px;
-      background-color: var(--nord0);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center; /* Center the content */
-      margin: auto; /* Center horizontally */
-    }
+        .highlight {
+            font-weight: 600;
+        }
 
-    /* Header styles */
-    .header {
-      margin-bottom: 20px;
-    }
+        .social-icons {
+            margin-top: 30px;
+        }
 
-    .header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: var(--nord6);
-    }
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #ECEFF4;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
 
-    .header p {
-      font-size: 16px;
-      color: var(--nord4);
-    }
-
-    /* Main content styles */
-    .content {
-      margin-bottom: 20px;
-    }
-
-    .content p {
-      line-height: 1.6;
-    }
-
-    /* Social links styles */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      color: var(--nord4);
-      background-color: var(--nord0);
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 24px;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .social-links a:hover {
-      background-color: var(--nord7);
-      color: var(--nord0);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .social-links a i {
-      pointer-events: none;
-    }
-
-    /* Footer styles */
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .footer p {
-      font-size: 14px;
-      color: var(--nord2);
-    }
-
-    /* Animation styles */
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Apply animations */
-    .fade-in {
-      animation: fade-in 1s ease;
-    }
-  </style>
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
-  <div class="container fade-in">
-    <header class="header">
-      <h1>About Me</h1>
-    </header>
-    <div class="content">
-      <p>
-        hello im tron idunno why u here but this is a about me page so 
-      </p>
-      <p>
-      <br>i like rhythm games and touhou</br>
-      <br>i watch anime and</br>
-      <br>i (somtimes) make music</br>
-      <br>i dunno what to put in here</br> 
-      <br>i dont like some stuff</br>
-      <br>im always confused its normal trust me</br> 
-      <br>im stupid its also normal</br> 
-      <br>im 999% lazy its normal and</br> 
-      <br>im bored all the time its normal :O</br>
-      </p>
+    <div class="container">
+        <h1>About Me</h1>
+        <p>hey im<span class="highlight"> tron</span> idunno why u here but this is a about me page so</p>
+        <p>i like rhythm games and touhou i watch anime and i (somtimes) make music i dunno what to put in here
+        <p>im always confused its normal trust me im stupid its also normal im 999% lazy its normal and im bored all the time its normal :O</p>
+        <div class="social-icons">
+            <a href="https://discordapp.com/channels/@me/553752561572904963/" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+            <a href="https://steamcommunity.com/id/tron12HD/" target="_blank" rel="noopener noreferrer"><i class="fab fa-steam"></i></a>
+            <a href="https://open.spotify.com/artist/3oEXpQbY5v3gHG1xfOPPLE?si=8XxXkpOaTYytUwi2mafjUg" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
+        </div>
     </div>
-    <div class="social-links">
-      <a href="https://discordapp.com/channels/@me/553752561572904963/"><i class="fab fa-discord"></i></a>
-      <a href="https://steamcommunity.com/id/tron12HD/"><i class="fab fa-steam"></i></a>
-      <a href="https://open.spotify.com/artist/3oEXpQbY5v3gHG1xfOPPLE?si=8XxXkpOaTYytUwi2mafjUg"><i class="fab fa-spotify"></i></a>
-    </div>
-    <footer class="footer">
-    </footer>
-  </div>
+
+    <!-- Font Awesome Icons (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
